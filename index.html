@@ -217,6 +217,86 @@
       font-size: 0.95rem;
     }
 
+    .flow {
+      margin-top: 1.35rem;
+      border: 1px solid var(--cp-border);
+      border-radius: 1rem;
+      background: var(--cp-surface);
+      box-shadow: 0 0 2px var(--cp-border), 0 1px 2px var(--cp-border-strong);
+      padding: 1rem;
+      overflow: hidden;
+    }
+    .flow h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+    }
+    .flow p {
+      margin: 0 0 0.75rem;
+      color: var(--cp-text-muted);
+      font-size: 0.9rem;
+    }
+    .flow-stage {
+      position: relative;
+      min-height: 10.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1.3fr 1fr;
+      gap: 0.85rem;
+      align-items: center;
+    }
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .item {
+      border: 1px solid var(--cp-border);
+      background: var(--cp-surface-soft);
+      color: var(--cp-text);
+      border-radius: 0.625rem;
+      padding: 0.5rem 0.65rem;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+    .item small {
+      display: block;
+      margin-top: 0.12rem;
+      color: var(--cp-text-soft);
+      font-size: 0.74rem;
+      font-weight: 500;
+    }
+    .track {
+      position: relative;
+      height: 100%;
+      border: 1px solid var(--cp-border);
+      border-radius: 0.75rem;
+      background: var(--cp-bg-elevated);
+      overflow: hidden;
+    }
+    .track::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 45%, var(--cp-border) 45%, var(--cp-border) 55%, transparent 55%),
+        linear-gradient(90deg, var(--cp-accent-soft), transparent 28%, transparent 72%, var(--cp-accent-soft));
+      opacity: 0.7;
+    }
+    .pulse {
+      position: absolute;
+      top: 50%;
+      left: -16%;
+      width: 16%;
+      height: 0.8rem;
+      border-radius: 999px;
+      transform: translateY(-50%);
+      background: var(--cp-accent);
+      animation: flow-right 4.6s linear infinite;
+      opacity: 0.95;
+    }
+    .pulse.two { animation-delay: -1.4s; }
+    .pulse.three { animation-delay: -2.8s; }
+    .pulse.four { animation-delay: -3.6s; }
+
     .footer {
       margin-top: 1.5rem;
       color: var(--cp-text-soft);
@@ -235,10 +315,26 @@
       0%, 100% { background: var(--cp-surface-soft); }
       50% { background: var(--cp-accent-soft); }
     }
+    @keyframes flow-right {
+      0% { left: -16%; opacity: 0; }
+      8% { opacity: 0.95; }
+      85% { opacity: 0.95; }
+      100% { left: 104%; opacity: 0; }
+    }
 
     @media (max-width: 48rem) {
       .hero { padding: 1.35rem; }
       .shell { padding-top: 1.5rem; }
+      .flow-stage {
+        grid-template-columns: 1fr;
+        min-height: unset;
+      }
+      .track {
+        height: 3.25rem;
+      }
+      .pulse {
+        width: 22%;
+      }
     }
   </style>
 </head>
@@ -281,6 +377,31 @@
         <h2>Ship from GitHub Pages</h2>
         <p>Lightweight HTML5 landing page with no build step, ready for instant publishing from main.</p>
       </article>
+    </section>
+
+    <section class="flow" aria-label="Module to HTML flow animation">
+      <h2>Module flow preview (looping)</h2>
+      <p>Multiple PPTX modules are continuously combined into a smaller HTML artifact set.</p>
+      <div class="flow-stage">
+        <div class="stack" aria-label="Source PPTX modules">
+          <div class="item">AZ-204-LP01-M01<small>module.py + manifest</small></div>
+          <div class="item">AZ-204-LP03-M02<small>slides + media</small></div>
+          <div class="item">AZ-400-LP02-M04<small>assets + notes</small></div>
+          <div class="item">MS-4019-LP01-M03<small>learning-path section</small></div>
+          <div class="item">AB-620-LP02-M01<small>reusable module block</small></div>
+        </div>
+        <div class="track" aria-hidden="true">
+          <span class="pulse one"></span>
+          <span class="pulse two"></span>
+          <span class="pulse three"></span>
+          <span class="pulse four"></span>
+        </div>
+        <div class="stack" aria-label="Curated HTML outputs">
+          <div class="item">intro-to-agents.html<small>customer landing</small></div>
+          <div class="item">technical-brief.html<small>focused walkthrough</small></div>
+          <div class="item">executive-summary.html<small>compact outcome view</small></div>
+        </div>
+      </div>
     </section>
 
     <p class="footer">
