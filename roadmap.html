@@ -470,6 +470,70 @@
     .hero-bars i:nth-child(2) { height: 58%; background: var(--cp-success); animation-delay: -0.45s; }
     .hero-bars i:nth-child(3) { height: 76%; background: var(--cp-accent); animation-delay: -0.7s; }
     .hero-bars i:nth-child(4) { height: 51%; background: var(--cp-warning); animation-delay: -0.95s; }
+    .hero-2 {
+      background:
+        linear-gradient(135deg, var(--cp-highlight), transparent 48%),
+        linear-gradient(180deg, var(--cp-surface), var(--cp-bg-elevated));
+    }
+    .hero-2::after {
+      width: 3.4rem;
+      height: 2.15rem;
+      border-radius: 0.55rem;
+      background: var(--cp-link);
+      box-shadow: 0 0 0 0.34rem var(--cp-accent-soft);
+    }
+    .hero-2 .hero-bars i:nth-child(1) { background: var(--cp-warning); }
+    .hero-2 .hero-bars i:nth-child(2) { background: var(--cp-link); }
+    .hero-2 .hero-bars i:nth-child(3) { background: var(--cp-success); }
+    .hero-2 .hero-bars i:nth-child(4) { background: var(--cp-accent); }
+    .hero-3 {
+      background:
+        linear-gradient(160deg, var(--cp-accent-soft), transparent 42%),
+        linear-gradient(180deg, var(--cp-surface-soft), var(--cp-bg-elevated));
+    }
+    .hero-3::after {
+      left: unset;
+      right: 1.05rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--cp-success);
+      box-shadow: 0 0 0 0.36rem var(--cp-highlight);
+    }
+    .hero-3 .hero-bars {
+      left: 0.95rem;
+      right: unset;
+    }
+    .hero-4 {
+      background:
+        linear-gradient(120deg, var(--cp-link), transparent 68%),
+        linear-gradient(180deg, var(--cp-surface), var(--cp-bg-elevated));
+    }
+    .hero-4::after {
+      width: 2.9rem;
+      height: 1.85rem;
+      border-radius: 0.45rem;
+      background: var(--cp-warning);
+      box-shadow: 0 0 0 0.32rem var(--cp-highlight);
+    }
+    .hero-4 .hero-bars i:nth-child(1) { height: 55%; }
+    .hero-4 .hero-bars i:nth-child(2) { height: 38%; }
+    .hero-4 .hero-bars i:nth-child(3) { height: 80%; }
+    .hero-4 .hero-bars i:nth-child(4) { height: 67%; }
+    .hero-5 {
+      background:
+        linear-gradient(145deg, var(--cp-success), transparent 70%),
+        linear-gradient(180deg, var(--cp-surface), var(--cp-bg-elevated));
+    }
+    .hero-5::after {
+      width: 2.1rem;
+      height: 2.1rem;
+      background: var(--cp-accent);
+      box-shadow: 0 0 0 0.42rem var(--cp-link);
+    }
+    .hero-5 .hero-bars i:nth-child(1) { background: var(--cp-link); height: 30%; }
+    .hero-5 .hero-bars i:nth-child(2) { background: var(--cp-warning); height: 72%; }
+    .hero-5 .hero-bars i:nth-child(3) { background: var(--cp-success); height: 48%; }
+    .hero-5 .hero-bars i:nth-child(4) { background: var(--cp-accent); height: 84%; }
 
     .info-col {
       border: 1px solid var(--cp-border);
@@ -572,6 +636,46 @@
       box-shadow: 0 0 0 0.22rem var(--cp-highlight);
       animation: bubble-glow 2.2s ease-in-out infinite;
     }
+    .map-2 .connector.c1 { left: 4.1rem; top: 3rem; width: 2.35rem; transform: rotate(-52deg); }
+    .map-2 .connector.c2 { left: 4.25rem; top: 4.2rem; width: 3.25rem; transform: rotate(4deg); }
+    .map-2 .connector.c3 { left: 4.1rem; top: 4.75rem; width: 2.4rem; transform: rotate(62deg); }
+    .map-2 .connector.c4 { left: 3.2rem; top: 4.2rem; width: 2.25rem; transform: rotate(154deg); }
+    .map-2 .bubble.main { left: 3.7rem; top: 3.55rem; background: var(--cp-link); }
+    .map-2 .bubble.b1 { left: 6.2rem; top: 1.25rem; background: var(--cp-warning); }
+    .map-2 .bubble.b2 { left: 7.25rem; top: 4.65rem; background: var(--cp-success); }
+    .map-2 .bubble.b3 { left: 5.65rem; top: 7.1rem; background: var(--cp-accent); }
+    .map-2 .bubble.b4 { left: 1.05rem; top: 4.7rem; background: var(--cp-link); }
+    .map-2 .bubble.b5 { left: 2.2rem; top: 1.45rem; background: var(--cp-success); }
+    .map-3 .connector.c1 { left: 3.35rem; top: 2.95rem; width: 3.8rem; transform: rotate(-8deg); }
+    .map-3 .connector.c2 { left: 3.45rem; top: 4.2rem; width: 3.6rem; transform: rotate(24deg); }
+    .map-3 .connector.c3 { left: 3.45rem; top: 4.45rem; width: 2rem; transform: rotate(96deg); }
+    .map-3 .connector.c4 { left: 3.3rem; top: 4.25rem; width: 2.55rem; transform: rotate(172deg); }
+    .map-3 .bubble.main { left: 2.95rem; top: 3.05rem; background: var(--cp-success); }
+    .map-3 .bubble.b1 { left: 6.95rem; top: 2.45rem; background: var(--cp-accent); }
+    .map-3 .bubble.b2 { left: 7.2rem; top: 5.95rem; background: var(--cp-warning); }
+    .map-3 .bubble.b3 { left: 3.45rem; top: 6.95rem; background: var(--cp-link); }
+    .map-3 .bubble.b4 { left: 0.75rem; top: 3.9rem; background: var(--cp-success); }
+    .map-3 .bubble.b5 { left: 1.7rem; top: 1.7rem; background: var(--cp-accent); }
+    .map-4 .connector.c1 { left: 3.95rem; top: 3.4rem; width: 3rem; transform: rotate(-35deg); }
+    .map-4 .connector.c2 { left: 4.1rem; top: 4.15rem; width: 3.2rem; transform: rotate(19deg); }
+    .map-4 .connector.c3 { left: 3.2rem; top: 4.35rem; width: 2.7rem; transform: rotate(116deg); }
+    .map-4 .connector.c4 { left: 3.8rem; top: 4.4rem; width: 2.35rem; transform: rotate(164deg); }
+    .map-4 .bubble.main { left: 3.3rem; top: 3.2rem; background: var(--cp-warning); }
+    .map-4 .bubble.b1 { left: 6.35rem; top: 1.25rem; background: var(--cp-link); }
+    .map-4 .bubble.b2 { left: 7.1rem; top: 5.2rem; background: var(--cp-accent); }
+    .map-4 .bubble.b3 { left: 4.9rem; top: 7.05rem; background: var(--cp-success); }
+    .map-4 .bubble.b4 { left: 0.95rem; top: 5.25rem; background: var(--cp-warning); }
+    .map-4 .bubble.b5 { left: 1.3rem; top: 1.9rem; background: var(--cp-link); }
+    .map-5 .connector.c1 { left: 3.6rem; top: 3.55rem; width: 3.7rem; transform: rotate(-18deg); }
+    .map-5 .connector.c2 { left: 3.75rem; top: 4.05rem; width: 3.15rem; transform: rotate(8deg); }
+    .map-5 .connector.c3 { left: 3.35rem; top: 4.35rem; width: 2.25rem; transform: rotate(102deg); }
+    .map-5 .connector.c4 { left: 3.25rem; top: 4.1rem; width: 2.75rem; transform: rotate(146deg); }
+    .map-5 .bubble.main { left: 2.75rem; top: 3.25rem; background: var(--cp-accent); }
+    .map-5 .bubble.b1 { left: 6.75rem; top: 1.7rem; background: var(--cp-success); }
+    .map-5 .bubble.b2 { left: 7.25rem; top: 5.65rem; background: var(--cp-link); }
+    .map-5 .bubble.b3 { left: 4.25rem; top: 6.95rem; background: var(--cp-warning); }
+    .map-5 .bubble.b4 { left: 1.05rem; top: 2.2rem; background: var(--cp-accent); }
+    .map-5 .bubble.b5 { left: 1.45rem; top: 6.15rem; background: var(--cp-success); }
     .slide-tag {
       position: absolute;
       right: 0.55rem;
@@ -751,13 +855,13 @@
                   <div class="text-lines">
                     <span></span><span></span><span></span><span></span>
                   </div>
-                  <div class="hero-image">
+                  <div class="hero-image hero-1">
                     <div class="hero-bars"><i></i><i></i><i></i><i></i></div>
                   </div>
                 </div>
                 <aside class="info-col">
                   <h5 class="info-title">Infographic network</h5>
-                  <div class="bubble-map">
+                  <div class="bubble-map map-1">
                     <span class="slide-tag">INSIGHT 01</span>
                     <span class="connector c1"></span><span class="connector c2"></span><span class="connector c3"></span><span class="connector c4"></span>
                     <span class="bubble main"></span><span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span><span class="bubble b4"></span><span class="bubble b5"></span><span class="bubble glow"></span>
@@ -772,13 +876,13 @@
                   <div class="text-lines">
                     <span></span><span></span><span></span><span></span>
                   </div>
-                  <div class="hero-image">
+                  <div class="hero-image hero-2">
                     <div class="hero-bars"><i></i><i></i><i></i><i></i></div>
                   </div>
                 </div>
                 <aside class="info-col">
                   <h5 class="info-title">Infographic network</h5>
-                  <div class="bubble-map">
+                  <div class="bubble-map map-2">
                     <span class="slide-tag">INSIGHT 02</span>
                     <span class="connector c1"></span><span class="connector c2"></span><span class="connector c3"></span><span class="connector c4"></span>
                     <span class="bubble main"></span><span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span><span class="bubble b4"></span><span class="bubble b5"></span><span class="bubble glow"></span>
@@ -793,13 +897,13 @@
                   <div class="text-lines">
                     <span></span><span></span><span></span><span></span>
                   </div>
-                  <div class="hero-image">
+                  <div class="hero-image hero-3">
                     <div class="hero-bars"><i></i><i></i><i></i><i></i></div>
                   </div>
                 </div>
                 <aside class="info-col">
                   <h5 class="info-title">Infographic network</h5>
-                  <div class="bubble-map">
+                  <div class="bubble-map map-3">
                     <span class="slide-tag">INSIGHT 03</span>
                     <span class="connector c1"></span><span class="connector c2"></span><span class="connector c3"></span><span class="connector c4"></span>
                     <span class="bubble main"></span><span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span><span class="bubble b4"></span><span class="bubble b5"></span><span class="bubble glow"></span>
@@ -814,13 +918,13 @@
                   <div class="text-lines">
                     <span></span><span></span><span></span><span></span>
                   </div>
-                  <div class="hero-image">
+                  <div class="hero-image hero-4">
                     <div class="hero-bars"><i></i><i></i><i></i><i></i></div>
                   </div>
                 </div>
                 <aside class="info-col">
                   <h5 class="info-title">Infographic network</h5>
-                  <div class="bubble-map">
+                  <div class="bubble-map map-4">
                     <span class="slide-tag">INSIGHT 04</span>
                     <span class="connector c1"></span><span class="connector c2"></span><span class="connector c3"></span><span class="connector c4"></span>
                     <span class="bubble main"></span><span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span><span class="bubble b4"></span><span class="bubble b5"></span><span class="bubble glow"></span>
@@ -835,13 +939,13 @@
                   <div class="text-lines">
                     <span></span><span></span><span></span><span></span>
                   </div>
-                  <div class="hero-image">
+                  <div class="hero-image hero-5">
                     <div class="hero-bars"><i></i><i></i><i></i><i></i></div>
                   </div>
                 </div>
                 <aside class="info-col">
                   <h5 class="info-title">Infographic network</h5>
-                  <div class="bubble-map">
+                  <div class="bubble-map map-5">
                     <span class="slide-tag">INSIGHT 05</span>
                     <span class="connector c1"></span><span class="connector c2"></span><span class="connector c3"></span><span class="connector c4"></span>
                     <span class="bubble main"></span><span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span><span class="bubble b4"></span><span class="bubble b5"></span><span class="bubble glow"></span>
