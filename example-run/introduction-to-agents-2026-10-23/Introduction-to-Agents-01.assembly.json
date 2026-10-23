@@ -1,0 +1,402 @@
+{
+  "source_module_library": "C:\\Users\\anconnif\\OneDrive - Microsoft\\coursetests\\module-library.manifest.json",
+  "output_path": "C:\\Users\\anconnif\\OneDrive - Microsoft\\coursetests\\Introduction-to-Agents-01.pptx",
+  "part_number": 1,
+  "total_parts": 3,
+  "max_slides": 50,
+  "estimated_slide_count": 50,
+  "title": "Introduction to Agents",
+  "subtitle": null,
+  "title_style_course": null,
+  "include_module_title_slides": true,
+  "selected_modules": [
+    {
+      "module_id": "AB-620-AB-620-ENU-POWERPOINT-LEARNINGPATH4-M01",
+      "course_id": "AB-620",
+      "learning_path": "AB-620-ENU-POWERPOINT-LEARNINGPATH4",
+      "module_title": "Learning path 4: Design and build multi-agent solutions in Microsoft Copilot Studio (GitHub Copilot)",
+      "module_folder": "AB-620T00-ENU-PowerPoint/courses/AB-620/modules/ab-620-enu-powerpoint-learningpath4-001-learning-path-4-design-and-build-multi-agent-solutions-in-microsoft-copilot-stud",
+      "source_pptx": "C:\\Users\\anconnif\\OneDrive - Microsoft\\coursetests\\AB-620T00-ENU-PowerPoint\\courses\\AB-620\\source\\AB-620-ENU-PowerPoint-LearningPath4.pptx",
+      "source_file_name": "AB-620-ENU-PowerPoint-LearningPath4.pptx",
+      "source_section_name": "Learning path 4: Design and build multi-agent solutions in Microsoft Copilot Studio (GitHub Copilot)",
+      "source_slide_numbers": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "slide_count": 49,
+      "description": "Covers Learning path 4: Design and build multi-agent solutions in Microsoft Copilot Studio (GitHub Copilot), including GitHub, CI, Compliance, Agent, Connected, Agents.",
+      "keywords": [
+        "GitHub",
+        "CI",
+        "Compliance",
+        "Agent",
+        "Connected",
+        "Agents",
+        "Corporation",
+        "Primary",
+        "Harness",
+        "Copilot",
+        "Benefits",
+        "Workflow",
+        "With",
+        "Instructions",
+        "Test"
+      ],
+      "audience": "DevOps engineers, developers, release engineers, and technical stakeholders",
+      "level": "intermediate",
+      "scenario_fit": [
+        "GitHub",
+        "CI",
+        "Compliance",
+        "Agent",
+        "Connected",
+        "Agents",
+        "Corporation",
+        "Primary"
+      ],
+      "assets": [
+        {
+          "source": "ppt/notesSlides/notesSlide1.xml",
+          "path": "theme/notesSlide1.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/slideLayouts/slideLayout48.xml",
+          "path": "theme/slideLayout48.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout"
+        },
+        {
+          "source": "ppt/slideLayouts/slideLayout18.xml",
+          "path": "theme/slideLayout18.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide2.xml",
+          "path": "theme/notesSlide2.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/slideLayouts/slideLayout2.xml",
+          "path": "theme/slideLayout2.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide3.xml",
+          "path": "theme/notesSlide3.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/slideLayouts/slideLayout41.xml",
+          "path": "theme/slideLayout41.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout"
+        },
+        {
+          "source": "ppt/media/image13.png",
+          "path": "images/image13.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/media/image12.png",
+          "path": "images/image12.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/media/image14.png",
+          "path": "images/image14.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/media/image15.png",
+          "path": "images/image15.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide4.xml",
+          "path": "theme/notesSlide4.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/media/image16.png",
+          "path": "images/image16.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/media/image18.png",
+          "path": "images/image18.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/media/image17.png",
+          "path": "images/image17.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/media/image20.png",
+          "path": "images/image20.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/media/image19.png",
+          "path": "images/image19.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide5.xml",
+          "path": "theme/notesSlide5.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide6.xml",
+          "path": "theme/notesSlide6.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide7.xml",
+          "path": "theme/notesSlide7.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide8.xml",
+          "path": "theme/notesSlide8.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/media/image21.png",
+          "path": "images/image21.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide9.xml",
+          "path": "theme/notesSlide9.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/media/image24.png",
+          "path": "images/image24.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/media/image23.png",
+          "path": "images/image23.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/media/image22.png",
+          "path": "images/image22.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide10.xml",
+          "path": "theme/notesSlide10.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide11.xml",
+          "path": "theme/notesSlide11.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide12.xml",
+          "path": "theme/notesSlide12.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide13.xml",
+          "path": "theme/notesSlide13.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/slideLayouts/slideLayout17.xml",
+          "path": "theme/slideLayout17.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide14.xml",
+          "path": "theme/notesSlide14.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide15.xml",
+          "path": "theme/notesSlide15.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide16.xml",
+          "path": "theme/notesSlide16.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide17.xml",
+          "path": "theme/notesSlide17.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/slideLayouts/slideLayout40.xml",
+          "path": "theme/slideLayout40.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide18.xml",
+          "path": "theme/notesSlide18.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/media/image25.png",
+          "path": "images/image25.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide19.xml",
+          "path": "theme/notesSlide19.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/media/image26.png",
+          "path": "images/image26.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide20.xml",
+          "path": "theme/notesSlide20.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide21.xml",
+          "path": "theme/notesSlide21.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide22.xml",
+          "path": "theme/notesSlide22.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide23.xml",
+          "path": "theme/notesSlide23.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide24.xml",
+          "path": "theme/notesSlide24.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide25.xml",
+          "path": "theme/notesSlide25.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide26.xml",
+          "path": "theme/notesSlide26.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide27.xml",
+          "path": "theme/notesSlide27.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/slideLayouts/slideLayout33.xml",
+          "path": "theme/slideLayout33.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout"
+        },
+        {
+          "source": "ppt/media/image27.png",
+          "path": "images/image27.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide28.xml",
+          "path": "theme/notesSlide28.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/media/image29.png",
+          "path": "images/image29.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/media/image28.png",
+          "path": "images/image28.png",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide29.xml",
+          "path": "theme/notesSlide29.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide30.xml",
+          "path": "theme/notesSlide30.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide31.xml",
+          "path": "theme/notesSlide31.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide32.xml",
+          "path": "theme/notesSlide32.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        },
+        {
+          "source": "ppt/notesSlides/notesSlide33.xml",
+          "path": "theme/notesSlide33.xml",
+          "relationship_type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide"
+        }
+      ],
+      "python_entrypoint": "AB-620T00-ENU-PowerPoint/courses/AB-620/modules/ab-620-enu-powerpoint-learningpath4-001-learning-path-4-design-and-build-multi-agent-solutions-in-microsoft-copilot-stud/module.py",
+      "assembly_notes": "Generated from inferred module divider slides because native PowerPoint Sections were not present.",
+      "module_manifest": "AB-620T00-ENU-PowerPoint/courses/AB-620/modules/ab-620-enu-powerpoint-learningpath4-001-learning-path-4-design-and-build-multi-agent-solutions-in-microsoft-copilot-stud/module.manifest.json",
+      "import_folder": "AB-620T00-ENU-PowerPoint"
+    }
+  ]
+}

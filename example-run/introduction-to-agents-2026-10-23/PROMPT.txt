@@ -1,0 +1,6 @@
+Curated course request:
+"Choosing the right Agent Harness in Copilot Studio, creating agents in SharePoint and Chat, and also the basics of generative AI in Azure Foundry as well as creating a basic agent in Azure Foundry."
+
+Run settings:
+- Deck title: Introduction to Agents
+- Max slides per deck: 50

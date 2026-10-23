@@ -1,0 +1,30 @@
+{
+  "timestamp_local": "2026-10-23T12:13:55-07:00",
+  "library_manifest": "C:\\Users\\anconnif\\OneDrive - Microsoft\\coursetests\\module-library.manifest.json",
+  "command": "python assemble_deck.py --library module-library.manifest.json --modules AB-620-AB-620-ENU-POWERPOINT-LEARNINGPATH4-M01,MS-4019-LP01-M03,AI-3016-FOUNDRY-INTRO,AI-3026-LP01-M01 --title \"Introduction to Agents\" --max-slides 50 --out Introduction-to-Agents.pptx",
+  "elapsed_seconds": 30.0,
+  "selected_modules": [
+    "AB-620-AB-620-ENU-POWERPOINT-LEARNINGPATH4-M01",
+    "MS-4019-LP01-M03",
+    "AI-3016-FOUNDRY-INTRO",
+    "AI-3026-LP01-M01"
+  ],
+  "outputs": [
+    {
+      "file": "Introduction-to-Agents-01.pptx",
+      "estimated_slides": 50,
+      "size_bytes": 2451832
+    },
+    {
+      "file": "Introduction-to-Agents-02.pptx",
+      "estimated_slides": 25,
+      "size_bytes": 9328666
+    },
+    {
+      "file": "Introduction-to-Agents-03.pptx",
+      "estimated_slides": 37,
+      "size_bytes": 3292554
+    }
+  ],
+  "aggregate_manifest": "C:\\Users\\anconnif\\OneDrive - Microsoft\\coursetests\\Introduction-to-Agents.assembly.json"
+}

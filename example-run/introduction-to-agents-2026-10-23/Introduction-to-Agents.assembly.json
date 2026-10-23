@@ -1,0 +1,19 @@
+{
+  "source_module_library": "C:\\Users\\anconnif\\OneDrive - Microsoft\\coursetests\\module-library.manifest.json",
+  "base_output": "C:\\Users\\anconnif\\OneDrive - Microsoft\\coursetests\\Introduction-to-Agents.pptx",
+  "title": "Introduction to Agents",
+  "subtitle": null,
+  "max_slides": 50,
+  "total_parts": 3,
+  "outputs": [
+    "C:\\Users\\anconnif\\OneDrive - Microsoft\\coursetests\\Introduction-to-Agents-01.pptx",
+    "C:\\Users\\anconnif\\OneDrive - Microsoft\\coursetests\\Introduction-to-Agents-02.pptx",
+    "C:\\Users\\anconnif\\OneDrive - Microsoft\\coursetests\\Introduction-to-Agents-03.pptx"
+  ],
+  "selected_module_ids": [
+    "AB-620-AB-620-ENU-POWERPOINT-LEARNINGPATH4-M01",
+    "MS-4019-LP01-M03",
+    "AI-3016-FOUNDRY-INTRO",
+    "AI-3026-LP01-M01"
+  ]
+}

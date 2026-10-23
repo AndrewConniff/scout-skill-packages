@@ -77,3 +77,15 @@ The skill writes a global manifest and searchable metadata (`course_id`, module 
 `/mixed-module-deck-assembler` reads the manifest, chooses ordered modules (from explicit IDs or ranked context), and invokes `assemble_deck.py` to build one or more numbered decks.
 
 The generated runtime uses PowerPoint COM (`pywin32`) with `Slides.InsertFromFile` contiguous ranges, applies optional indexed title-slide style, enforces max-slide limits at module boundaries, and splits into parts when needed.
+
+## Example run (timed)
+
+- **Initial prompt:** "Choosing the right Agent Harness in Copilot Studio, creating agents in SharePoint and Chat, and also the basics of generative AI in Azure Foundry as well as creating a basic agent in Azure Foundry."
+- **Deck title:** `Introduction to Agents`
+- **Max slides per deck:** `50`
+- **Run time:** `30.0 seconds`
+
+Downloads:
+
+- [Example run bundle (zip)](./example-run/introduction-to-agents-example-run.zip)
+- [Unzipped example-run artifacts folder](./example-run/introduction-to-agents-2026-10-23/)
