@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roadmap - Curated Delivery Story</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("scoutTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --cp-bg: #f7f4ef;
+      --cp-bg-elevated: #fcfbf8;
+      --cp-surface: #ffffff;
+      --cp-surface-soft: #f5f5f5;
+      --cp-border: #dedede;
+      --cp-border-strong: #919191;
+      --cp-text: #242424;
+      --cp-text-muted: #5c5c5c;
+      --cp-text-soft: #6f6f6f;
+      --cp-accent: #b11f4b;
+      --cp-accent-hover: #9a1a41;
+      --cp-accent-soft: rgba(177, 31, 75, 0.08);
+      --cp-accent-fg: #ffffff;
+      --cp-success: #16a34a;
+      --cp-danger: #dc2626;
+      --cp-warning: #f59e0b;
+      --cp-link: #0078d4;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+      --cp-overlay: rgba(255, 255, 255, 0.8);
+      --cp-panel: rgba(255, 255, 255, 0.86);
+      --cp-panel-strong: rgba(255, 255, 255, 0.96);
+      --cp-sheen: rgba(255, 255, 255, 0.55);
+      --cp-highlight: rgba(177, 31, 75, 0.12);
+    }
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --cp-bg: #3d3b3a;
+      --cp-bg-elevated: #343231;
+      --cp-surface: #292929;
+      --cp-surface-soft: #2e2e2e;
+      --cp-border: #474747;
+      --cp-border-strong: #5f5f5f;
+      --cp-text: #dedede;
+      --cp-text-muted: #919191;
+      --cp-text-soft: #b0b0b0;
+      --cp-accent: #fd8ea1;
+      --cp-accent-hover: #fb7b91;
+      --cp-accent-soft: rgba(253, 142, 161, 0.14);
+      --cp-accent-fg: #1a1a1a;
+      --cp-success: #4ade80;
+      --cp-danger: #f87171;
+      --cp-warning: #fbbf24;
+      --cp-link: #4da6ff;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+      --cp-overlay: rgba(41, 41, 41, 0.88);
+      --cp-panel: rgba(41, 41, 41, 0.72);
+      --cp-panel-strong: rgba(41, 41, 41, 0.96);
+      --cp-sheen: rgba(255, 255, 255, 0.04);
+      --cp-highlight: rgba(253, 142, 161, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--cp-text);
+      background:
+        radial-gradient(circle at 10% 0%, var(--cp-accent-soft), transparent 24%),
+        radial-gradient(circle at 90% 0%, var(--cp-highlight), transparent 26%),
+        var(--cp-bg);
+      min-height: 100vh;
+    }
+
+    .shell {
+      max-width: 76rem;
+      margin: 0 auto;
+      padding: 2rem 1.2rem 3rem;
+    }
+
+    .head {
+      border: 1px solid var(--cp-border);
+      border-radius: 1rem;
+      background: var(--cp-panel-strong);
+      box-shadow: var(--cp-shadow);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .head h1 {
+      margin: 0.2rem 0 0.5rem;
+      font-size: clamp(1.7rem, 3.8vw, 2.6rem);
+      line-height: 1.15;
+    }
+    .head p {
+      margin: 0;
+      color: var(--cp-text-muted);
+      max-width: 80ch;
+    }
+    .head-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 0.7rem;
+    }
+    .chip {
+      border: 1px solid var(--cp-border);
+      background: var(--cp-surface-soft);
+      color: var(--cp-text-muted);
+      border-radius: 999px;
+      padding: 0.3rem 0.7rem;
+      font-size: 0.8rem;
+      animation: glow 2.8s ease-in-out infinite;
+    }
+    .btn {
+      text-decoration: none;
+      border: 1px solid var(--cp-border);
+      border-radius: 0.625rem;
+      padding: 0.55rem 0.9rem;
+      color: var(--cp-text);
+      background: var(--cp-surface);
+      font-weight: 600;
+    }
+    .btn:hover { border-color: var(--cp-border-strong); }
+
+    .timeline {
+      display: grid;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .step {
+      border: 1px solid var(--cp-border);
+      border-radius: 1rem;
+      background: var(--cp-surface);
+      box-shadow: 0 0 2px var(--cp-border), 0 1px 2px var(--cp-border-strong);
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .step h2 {
+      margin: 0 0 0.28rem;
+      font-size: 1rem;
+    }
+    .step p {
+      margin: 0;
+      color: var(--cp-text-muted);
+      font-size: 0.92rem;
+    }
+    .flow-line {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      width: 7rem;
+      height: 0.14rem;
+      border-radius: 999px;
+      background: var(--cp-border-strong);
+      opacity: 0.7;
+    }
+    .flow-dot {
+      position: absolute;
+      top: 50%;
+      right: 7.9rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--cp-accent);
+      transform: translateY(-50%);
+      animation: pulse-dot 2.2s ease-in-out infinite;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .panel {
+      border: 1px solid var(--cp-border);
+      border-radius: 1rem;
+      background: var(--cp-surface);
+      box-shadow: 0 0 2px var(--cp-border), 0 1px 2px var(--cp-border-strong);
+      padding: 1rem;
+    }
+    .panel h3 {
+      margin: 0 0 0.35rem;
+      font-size: 0.98rem;
+    }
+    .panel p {
+      margin: 0 0 0.7rem;
+      color: var(--cp-text-muted);
+      font-size: 0.89rem;
+    }
+
+    .mini-pipeline {
+      position: relative;
+      height: 4.1rem;
+      border: 1px solid var(--cp-border);
+      border-radius: 0.7rem;
+      background: var(--cp-bg-elevated);
+      overflow: hidden;
+    }
+    .mini-track {
+      position: absolute;
+      left: 0.45rem;
+      right: 0.45rem;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 0.12rem;
+      border-radius: 999px;
+      background: var(--cp-border-strong);
+      opacity: 0.7;
+    }
+    .mini-file {
+      position: absolute;
+      top: 50%;
+      left: -1.25rem;
+      width: 0.8rem;
+      height: 1rem;
+      border-radius: 0.2rem;
+      border: 1px solid var(--cp-border-strong);
+      background: var(--cp-surface);
+      transform: translateY(-50%);
+      animation: fly-mini 3.8s linear infinite;
+      opacity: 0;
+    }
+    .mini-file.two { animation-delay: -1.25s; }
+    .mini-file.three { animation-delay: -2.5s; }
+    .mini-file::after {
+      content: "";
+      position: absolute;
+      left: 0.12rem;
+      right: 0.12rem;
+      top: 0.2rem;
+      height: 0.12rem;
+      border-radius: 999px;
+      background: var(--cp-accent-soft);
+    }
+
+    .outputs {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.45rem;
+    }
+    .out {
+      border: 1px solid var(--cp-border);
+      border-radius: 0.6rem;
+      background: var(--cp-surface-soft);
+      padding: 0.45rem 0.35rem;
+      font-size: 0.78rem;
+      text-align: center;
+      color: var(--cp-text-muted);
+    }
+    .badge {
+      display: inline-block;
+      border-radius: 0.35rem;
+      background: var(--cp-accent);
+      color: var(--cp-accent-fg);
+      padding: 0.08rem 0.28rem;
+      font-size: 0.64rem;
+      margin-bottom: 0.2rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .publish-panel {
+      border: 1px solid var(--cp-border);
+      border-radius: 1rem;
+      background: var(--cp-surface);
+      box-shadow: 0 0 2px var(--cp-border), 0 1px 2px var(--cp-border-strong);
+      padding: 1rem;
+    }
+    .publish-panel h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+    }
+    .publish-panel p {
+      margin: 0 0 0.7rem;
+      color: var(--cp-text-muted);
+      font-size: 0.9rem;
+    }
+
+    .welcome {
+      border: 1px solid var(--cp-border);
+      border-radius: 0.9rem;
+      background: var(--cp-bg-elevated);
+      padding: 0.75rem;
+    }
+    .welcome-title {
+      margin: 0 0 0.55rem;
+      font-size: 1rem;
+      color: var(--cp-accent);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      animation: title-pop 2.3s ease-in-out infinite;
+    }
+    .welcome-links {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.6rem;
+    }
+    .welcome-link {
+      border: 1px solid var(--cp-border);
+      border-radius: 0.55rem;
+      background: var(--cp-surface);
+      color: var(--cp-text-muted);
+      font-size: 0.78rem;
+      padding: 0.28rem 0.48rem;
+      animation: blink 3s ease-in-out infinite;
+    }
+    .welcome-link:nth-child(2) { animation-delay: -0.8s; }
+    .welcome-link:nth-child(3) { animation-delay: -1.6s; }
+    .welcome-link:nth-child(4) { animation-delay: -2.2s; }
+
+    .deck-view {
+      border: 1px solid var(--cp-border);
+      border-radius: 0.75rem;
+      background: var(--cp-surface);
+      overflow: hidden;
+    }
+    .deck-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--cp-border);
+      padding: 0.35rem 0.5rem;
+      background: var(--cp-surface-soft);
+    }
+    .nav-btn {
+      border: 1px solid var(--cp-border);
+      border-radius: 0.45rem;
+      background: var(--cp-surface);
+      color: var(--cp-text);
+      width: 1.8rem;
+      height: 1.6rem;
+      cursor: pointer;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .nav-btn:hover { border-color: var(--cp-border-strong); }
+    .slide-count {
+      color: var(--cp-text-muted);
+      font-size: 0.78rem;
+      min-width: 5.8rem;
+      text-align: center;
+    }
+    .slides {
+      position: relative;
+      height: 11.2rem;
+      overflow: hidden;
+      background: var(--cp-bg-elevated);
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: 0.7rem;
+      opacity: 0;
+      transform: translateX(10%);
+      transition: opacity 260ms ease, transform 260ms ease;
+      pointer-events: none;
+    }
+    .slide.active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+    .slide h4 {
+      margin: 0 0 0.4rem;
+      font-size: 0.92rem;
+      color: var(--cp-text);
+    }
+    .infographic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.45rem;
+      height: calc(100% - 1.35rem);
+    }
+    .viz {
+      border: 1px solid var(--cp-border);
+      border-radius: 0.55rem;
+      background: var(--cp-surface);
+      position: relative;
+      overflow: hidden;
+    }
+    .bar {
+      position: absolute;
+      bottom: 0.25rem;
+      width: 0.48rem;
+      border-radius: 0.2rem 0.2rem 0 0;
+      background: var(--cp-accent-soft);
+      border: 1px solid var(--cp-border);
+      animation: bars 2.6s ease-in-out infinite;
+    }
+    .bar.b1 { left: 0.35rem; height: 28%; }
+    .bar.b2 { left: 1.0rem; height: 44%; animation-delay: -0.3s; }
+    .bar.b3 { left: 1.65rem; height: 63%; animation-delay: -0.6s; }
+    .bar.b4 { left: 2.3rem; height: 37%; animation-delay: -0.9s; }
+    .donut {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) rotate(0deg);
+      border: 0.45rem solid var(--cp-accent-soft);
+      border-top-color: var(--cp-accent);
+      animation: spin 4.2s linear infinite;
+    }
+    .line {
+      position: absolute;
+      left: 0.35rem;
+      right: 0.35rem;
+      top: 52%;
+      height: 0.11rem;
+      border-radius: 999px;
+      background: var(--cp-border-strong);
+    }
+    .dot {
+      position: absolute;
+      top: calc(52% - 0.16rem);
+      width: 0.32rem;
+      height: 0.32rem;
+      border-radius: 50%;
+      background: var(--cp-accent);
+      animation: dot-move 2.7s linear infinite;
+    }
+    .dot.d2 { animation-delay: -1.35s; }
+
+    .footer {
+      margin-top: 1rem;
+      color: var(--cp-text-soft);
+      font-size: 0.85rem;
+    }
+    .footer a { color: var(--cp-link); }
+
+    @keyframes glow {
+      0%, 100% { background: var(--cp-surface-soft); }
+      50% { background: var(--cp-accent-soft); }
+    }
+    @keyframes pulse-dot {
+      0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.85; }
+      50% { transform: translateY(-50%) scale(1.35); opacity: 1; }
+    }
+    @keyframes fly-mini {
+      0% { left: -1.25rem; opacity: 0; }
+      12% { opacity: 1; }
+      86% { opacity: 1; }
+      100% { left: calc(100% + 0.5rem); opacity: 0; }
+    }
+    @keyframes title-pop {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-0.14rem); }
+    }
+    @keyframes blink {
+      0%, 100% { background: var(--cp-surface); }
+      50% { background: var(--cp-accent-soft); }
+    }
+    @keyframes bars {
+      0%, 100% { transform: scaleY(1); }
+      50% { transform: scaleY(1.22); }
+    }
+    @keyframes spin {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+    @keyframes dot-move {
+      0% { left: 0.35rem; }
+      100% { left: calc(100% - 0.65rem); }
+    }
+
+    @media (max-width: 64rem) {
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 40rem) {
+      .outputs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .slides {
+        height: 10.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="head">
+      <div class="head-row">
+        <span class="chip">Roadmap • animated end-to-end flow</span>
+        <a class="btn" href="./">Back to landing page</a>
+      </div>
+      <h1>Curated Delivery Roadmap</h1>
+      <p>
+        From customer pursuit to curated assets: this sequence shows how one information stream drives deck
+        curation, demo package generation, and web-first walkthrough publishing.
+      </p>
+    </section>
+
+    <section class="timeline">
+      <article class="step">
+        <h2>1. Customer Win room</h2>
+        <p>Initial pursuit context and solution intent are aligned by the team.</p>
+        <span class="flow-line" aria-hidden="true"></span>
+        <span class="flow-dot" aria-hidden="true"></span>
+      </article>
+      <article class="step">
+        <h2>2. Customer Scoping call (MTT in attendance)</h2>
+        <p>Customer requirements, audience profile, and delivery constraints are captured with the MTT.</p>
+      </article>
+      <article class="step">
+        <h2>3. Information gathered</h2>
+        <p>Inputs are normalized into a structured package used by every downstream build path.</p>
+      </article>
+    </section>
+
+    <section class="story-grid">
+      <article class="panel">
+        <h3>4A. PPTX Deck Curation flow</h3>
+        <p>Curated slide assets are extracted, ranked, and assembled into targeted delivery decks.</p>
+        <div class="mini-pipeline" aria-hidden="true">
+          <span class="mini-track"></span>
+          <span class="mini-file one"></span>
+          <span class="mini-file two"></span>
+          <span class="mini-file three"></span>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h3>4B. Demo-builder flow (Scout / Cowork)</h3>
+        <p>The same source information drives multi-format artifact generation.</p>
+        <div class="outputs">
+          <div class="out"><span class="badge">XLSX</span><br/>Excel files</div>
+          <div class="out"><span class="badge">DOCX</span><br/>Word docs</div>
+          <div class="out"><span class="badge">PPTX</span><br/>Slide decks</div>
+          <div class="out"><span class="badge">DOCX</span><br/>Demo instructions</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="publish-panel">
+      <h2>5. HTML walkthrough + GitHub publish</h2>
+      <p>
+        Original information is also transformed into a web walkthrough (HTML5), then published with all files
+        and demos under a class welcome page.
+      </p>
+
+      <div class="welcome">
+        <h3 class="welcome-title">Curated Delkivery</h3>
+        <div class="welcome-links" aria-hidden="true">
+          <span class="welcome-link">Deck downloads</span>
+          <span class="welcome-link">Demo files</span>
+          <span class="welcome-link">Walkthrough HTML</span>
+          <span class="welcome-link">GitHub source</span>
+        </div>
+
+        <div class="deck-view" aria-label="Presentation preview with arrows">
+          <div class="deck-nav">
+            <button class="nav-btn" id="prevBtn" type="button" aria-label="Previous slide">◀</button>
+            <div class="slide-count" id="slideCount">Slide 1 / 5</div>
+            <button class="nav-btn" id="nextBtn" type="button" aria-label="Next slide">▶</button>
+          </div>
+          <div class="slides" id="slides">
+            <section class="slide active">
+              <h4>Class Overview</h4>
+              <div class="infographic">
+                <div class="viz">
+                  <span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4"></span>
+                </div>
+                <div class="viz"><span class="donut"></span></div>
+              </div>
+            </section>
+            <section class="slide">
+              <h4>Audience & Priorities</h4>
+              <div class="infographic">
+                <div class="viz"><span class="line"></span><span class="dot"></span><span class="dot d2"></span></div>
+                <div class="viz"><span class="donut"></span></div>
+              </div>
+            </section>
+            <section class="slide">
+              <h4>Module Mix</h4>
+              <div class="infographic">
+                <div class="viz">
+                  <span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4"></span>
+                </div>
+                <div class="viz"><span class="line"></span><span class="dot"></span><span class="dot d2"></span></div>
+              </div>
+            </section>
+            <section class="slide">
+              <h4>Hands-on Demo Path</h4>
+              <div class="infographic">
+                <div class="viz"><span class="donut"></span></div>
+                <div class="viz"><span class="line"></span><span class="dot"></span><span class="dot d2"></span></div>
+              </div>
+            </section>
+            <section class="slide">
+              <h4>Delivery Package Summary</h4>
+              <div class="infographic">
+                <div class="viz">
+                  <span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span><span class="bar b4"></span>
+                </div>
+                <div class="viz"><span class="donut"></span></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer">
+      Hosted on GitHub Pages • <a href="https://github.com/AndrewConniff/scout-skill-packages">View source repository</a>
+    </p>
+  </main>
+
+  <script>
+    (() => {
+      const slides = Array.from(document.querySelectorAll(".slide"));
+      const count = document.getElementById("slideCount");
+      const prev = document.getElementById("prevBtn");
+      const next = document.getElementById("nextBtn");
+      let idx = 0;
+      let timer;
+
+      function render() {
+        slides.forEach((s, i) => s.classList.toggle("active", i === idx));
+        count.textContent = "Slide " + (idx + 1) + " / " + slides.length;
+      }
+
+      function step(delta) {
+        idx = (idx + delta + slides.length) % slides.length;
+        render();
+      }
+
+      function restartTimer() {
+        window.clearInterval(timer);
+        timer = window.setInterval(() => step(1), 2800);
+      }
+
+      prev.addEventListener("click", () => {
+        step(-1);
+        restartTimer();
+      });
+      next.addEventListener("click", () => {
+        step(1);
+        restartTimer();
+      });
+
+      render();
+      restartTimer();
+    })();
+  </script>
+</body>
+</html>
