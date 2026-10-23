@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scout Skill Packages - Quick Start</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("scoutTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --cp-bg: #f7f4ef;
+      --cp-bg-elevated: #fcfbf8;
+      --cp-surface: #ffffff;
+      --cp-surface-soft: #f5f5f5;
+      --cp-border: #dedede;
+      --cp-border-strong: #919191;
+      --cp-text: #242424;
+      --cp-text-muted: #5c5c5c;
+      --cp-text-soft: #6f6f6f;
+      --cp-accent: #b11f4b;
+      --cp-accent-hover: #9a1a41;
+      --cp-accent-soft: rgba(177, 31, 75, 0.08);
+      --cp-accent-fg: #ffffff;
+      --cp-success: #16a34a;
+      --cp-danger: #dc2626;
+      --cp-warning: #f59e0b;
+      --cp-link: #0078d4;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+      --cp-overlay: rgba(255, 255, 255, 0.8);
+      --cp-panel: rgba(255, 255, 255, 0.86);
+      --cp-panel-strong: rgba(255, 255, 255, 0.96);
+      --cp-sheen: rgba(255, 255, 255, 0.55);
+      --cp-highlight: rgba(177, 31, 75, 0.12);
+    }
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --cp-bg: #3d3b3a;
+      --cp-bg-elevated: #343231;
+      --cp-surface: #292929;
+      --cp-surface-soft: #2e2e2e;
+      --cp-border: #474747;
+      --cp-border-strong: #5f5f5f;
+      --cp-text: #dedede;
+      --cp-text-muted: #919191;
+      --cp-text-soft: #b0b0b0;
+      --cp-accent: #fd8ea1;
+      --cp-accent-hover: #fb7b91;
+      --cp-accent-soft: rgba(253, 142, 161, 0.14);
+      --cp-accent-fg: #1a1a1a;
+      --cp-success: #4ade80;
+      --cp-danger: #f87171;
+      --cp-warning: #fbbf24;
+      --cp-link: #4da6ff;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+      --cp-overlay: rgba(41, 41, 41, 0.88);
+      --cp-panel: rgba(41, 41, 41, 0.72);
+      --cp-panel-strong: rgba(41, 41, 41, 0.96);
+      --cp-sheen: rgba(255, 255, 255, 0.04);
+      --cp-highlight: rgba(253, 142, 161, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cp-bg);
+      color: var(--cp-text);
+      line-height: 1.5;
+    }
+
+    .shell {
+      max-width: 62rem;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      text-decoration: none;
+      border: 1px solid var(--cp-border);
+      border-radius: 0.625rem;
+      padding: 0.55rem 0.85rem;
+      color: var(--cp-text);
+      background: var(--cp-surface);
+      font-weight: 600;
+    }
+    .btn:hover {
+      border-color: var(--cp-border-strong);
+    }
+
+    .card {
+      background: var(--cp-surface);
+      border: 1px solid var(--cp-border);
+      border-radius: 1rem;
+      box-shadow: var(--cp-shadow);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 { margin-top: 0; }
+    h1 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); margin-bottom: 0.8rem; }
+    h2 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    h3 { font-size: 1.05rem; margin-bottom: 0.45rem; }
+    p, li { color: var(--cp-text-muted); }
+    strong { color: var(--cp-text); }
+    a { color: var(--cp-link); }
+    code {
+      font-family: Consolas, "Courier New", Courier, monospace;
+      background: var(--cp-surface-soft);
+      border: 1px solid var(--cp-border);
+      border-radius: 0.4rem;
+      padding: 0.08rem 0.35rem;
+      color: var(--cp-text);
+    }
+    pre {
+      margin: 0.6rem 0 0;
+      background: var(--cp-surface-soft);
+      border: 1px solid var(--cp-border);
+      border-radius: 0.625rem;
+      padding: 0.75rem;
+      overflow: auto;
+    }
+    pre code {
+      border: 0;
+      background: transparent;
+      padding: 0;
+      display: block;
+      white-space: pre;
+    }
+    ul, ol { margin-top: 0.35rem; }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="top">
+      <h1>Scout Skill Packages - Quick Start</h1>
+      <a class="btn" href="./">Back to landing page</a>
+    </div>
+
+    <section class="card">
+      <p>This repository packages two custom Scout skills as separate installable bundles:</p>
+      <ul>
+        <li><code>pptx-module-library.zip</code></li>
+        <li><code>mixed-module-deck-assembler.zip</code></li>
+      </ul>
+      <p>These skills are designed to work as a pair:</p>
+      <ol>
+        <li><strong>/pptx-module-library</strong> builds and indexes a reusable module library from course decks.</li>
+        <li><strong>/mixed-module-deck-assembler</strong> selects indexed modules and assembles curated customer decks.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>Install into another Scout instance</h2>
+      <ol>
+        <li>Extract the chosen zip.</li>
+        <li>Copy <code>m-skills/&lt;skill-name&gt;/</code> into <code>~/.scout/m-skills/</code>.</li>
+        <li>Merge the entry in <code>skill-metadata.json</code> into <code>~/.scout/m-skills/skills-metadata.json</code>.</li>
+        <li>Restart Scout.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>How to use each skill</h2>
+
+      <h3>/pptx-module-library</h3>
+      <p>Use when you want to turn a folder of training/course <code>.pptx</code> files into a reusable module catalog.</p>
+      <ol>
+        <li>Run <code>/pptx-module-library</code>.</li>
+        <li>Confirm the main library root (recommended: <code>OneDrive\MTT Module Library</code>).</li>
+        <li>Provide a source folder containing course decks.</li>
+        <li>Let the skill index decks into course/module folders and manifests.</li>
+        <li>Repeat for additional courses; reindexing is supported by <code>course_id</code>.</li>
+      </ol>
+
+      <h3>/mixed-module-deck-assembler</h3>
+      <p>Use when you already have an indexed module library and want a curated customer-ready deck.</p>
+      <ol>
+        <li>Run <code>/mixed-module-deck-assembler</code>.</li>
+        <li>Provide <code>module-library.manifest.json</code> (or the library root containing it).</li>
+        <li>Confirm deck title and max slides per deck (recommended: <code>50</code>).</li>
+        <li>Provide context (prompt/notes/audience) or explicit module IDs.</li>
+        <li>Confirm ordered module list, then assemble.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>How it works (deconstruct - index - construct)</h2>
+      <h3>1. Deconstruct and preserve</h3>
+      <p><code>/pptx-module-library</code> processes source course decks, detects module boundaries (prefer PowerPoint Sections), and preserves source fidelity with module artifacts plus Python reconstruction metadata.</p>
+
+      <h3>2. Index for retrieval and ranking</h3>
+      <p>The skill writes a global manifest and searchable metadata (<code>course_id</code>, module IDs, titles, descriptions, keywords, slide counts, title-slide styles).</p>
+
+      <h3>3. Construct curated mixed decks</h3>
+      <p><code>/mixed-module-deck-assembler</code> reads the manifest, chooses ordered modules, and invokes <code>assemble_deck.py</code> to build one or more numbered decks.</p>
+    </section>
+
+    <section class="card">
+      <h2>Example run (timed)</h2>
+      <ul>
+        <li><strong>Initial prompt:</strong> Choosing the right Agent Harness in Copilot Studio, creating agents in SharePoint and Chat, and also the basics of generative AI in Azure Foundry as well as creating a basic agent in Azure Foundry.</li>
+        <li><strong>Deck title:</strong> <code>Introduction to Agents</code></li>
+        <li><strong>Max slides per deck:</strong> <code>50</code></li>
+        <li><strong>Run time:</strong> <code>30.0 seconds</code></li>
+      </ul>
+      <p>
+        Downloads:
+        <a href="./example-run/introduction-to-agents-example-run.zip">Example run bundle (zip)</a>
+        and
+        <a href="./example-run/introduction-to-agents-2026-10-23/">unzipped example-run artifacts</a>.
+      </p>
+      <p>
+        Raw markdown remains available at
+        <a href="./README.md">README.md</a>.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
