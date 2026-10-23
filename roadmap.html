@@ -394,14 +394,14 @@
       bottom: 0.25rem;
       width: 0.48rem;
       border-radius: 0.2rem 0.2rem 0 0;
-      background: var(--cp-accent-soft);
+      background: var(--cp-accent);
       border: 1px solid var(--cp-border);
       animation: bars 2.6s ease-in-out infinite;
     }
-    .bar.b1 { left: 0.35rem; height: 28%; }
-    .bar.b2 { left: 1.0rem; height: 44%; animation-delay: -0.3s; }
-    .bar.b3 { left: 1.65rem; height: 63%; animation-delay: -0.6s; }
-    .bar.b4 { left: 2.3rem; height: 37%; animation-delay: -0.9s; }
+    .bar.b1 { left: 0.35rem; height: 28%; background: var(--cp-link); }
+    .bar.b2 { left: 1.0rem; height: 44%; background: var(--cp-success); animation-delay: -0.3s; }
+    .bar.b3 { left: 1.65rem; height: 63%; background: var(--cp-accent); animation-delay: -0.6s; }
+    .bar.b4 { left: 2.3rem; height: 37%; background: var(--cp-warning); animation-delay: -0.9s; }
     .donut {
       position: absolute;
       top: 50%;
@@ -410,9 +410,17 @@
       height: 2.6rem;
       border-radius: 50%;
       transform: translate(-50%, -50%) rotate(0deg);
-      border: 0.45rem solid var(--cp-accent-soft);
-      border-top-color: var(--cp-accent);
+      border: 0;
+      background: conic-gradient(var(--cp-accent) 0 32%, var(--cp-link) 32% 56%, var(--cp-success) 56% 78%, var(--cp-warning) 78% 100%);
       animation: spin 4.2s linear infinite;
+    }
+    .donut::after {
+      content: "";
+      position: absolute;
+      inset: 0.5rem;
+      border-radius: 50%;
+      background: var(--cp-surface);
+      border: 1px solid var(--cp-border);
     }
     .line {
       position: absolute;
@@ -421,7 +429,8 @@
       top: 52%;
       height: 0.11rem;
       border-radius: 999px;
-      background: var(--cp-border-strong);
+      background: var(--cp-link);
+      opacity: 0.75;
     }
     .dot {
       position: absolute;
@@ -432,7 +441,10 @@
       background: var(--cp-accent);
       animation: dot-move 2.7s linear infinite;
     }
-    .dot.d2 { animation-delay: -1.35s; }
+    .dot.d2 {
+      animation-delay: -1.35s;
+      background: var(--cp-warning);
+    }
 
     .footer {
       margin-top: 1rem;
@@ -554,7 +566,7 @@
       </p>
 
       <div class="welcome">
-        <h3 class="welcome-title">Curated Delkivery</h3>
+        <h3 class="welcome-title">Curated Delivery</h3>
         <div class="welcome-links" aria-hidden="true">
           <span class="welcome-link">Deck downloads</span>
           <span class="welcome-link">Demo files</span>
@@ -627,7 +639,6 @@
       const prev = document.getElementById("prevBtn");
       const next = document.getElementById("nextBtn");
       let idx = 0;
-      let timer;
 
       function render() {
         slides.forEach((s, i) => s.classList.toggle("active", i === idx));
@@ -639,22 +650,14 @@
         render();
       }
 
-      function restartTimer() {
-        window.clearInterval(timer);
-        timer = window.setInterval(() => step(1), 2800);
-      }
-
       prev.addEventListener("click", () => {
         step(-1);
-        restartTimer();
       });
       next.addEventListener("click", () => {
         step(1);
-        restartTimer();
       });
 
       render();
-      restartTimer();
     })();
   </script>
 </body>
