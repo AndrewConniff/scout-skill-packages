@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scout Skill Packages</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("scoutTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --cp-bg: #f7f4ef;
+      --cp-bg-elevated: #fcfbf8;
+      --cp-surface: #ffffff;
+      --cp-surface-soft: #f5f5f5;
+      --cp-border: #dedede;
+      --cp-border-strong: #919191;
+      --cp-text: #242424;
+      --cp-text-muted: #5c5c5c;
+      --cp-text-soft: #6f6f6f;
+      --cp-accent: #b11f4b;
+      --cp-accent-hover: #9a1a41;
+      --cp-accent-soft: rgba(177, 31, 75, 0.08);
+      --cp-accent-fg: #ffffff;
+      --cp-success: #16a34a;
+      --cp-danger: #dc2626;
+      --cp-warning: #f59e0b;
+      --cp-link: #0078d4;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+      --cp-overlay: rgba(255, 255, 255, 0.8);
+      --cp-panel: rgba(255, 255, 255, 0.86);
+      --cp-panel-strong: rgba(255, 255, 255, 0.96);
+      --cp-sheen: rgba(255, 255, 255, 0.55);
+      --cp-highlight: rgba(177, 31, 75, 0.12);
+    }
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --cp-bg: #3d3b3a;
+      --cp-bg-elevated: #343231;
+      --cp-surface: #292929;
+      --cp-surface-soft: #2e2e2e;
+      --cp-border: #474747;
+      --cp-border-strong: #5f5f5f;
+      --cp-text: #dedede;
+      --cp-text-muted: #919191;
+      --cp-text-soft: #b0b0b0;
+      --cp-accent: #fd8ea1;
+      --cp-accent-hover: #fb7b91;
+      --cp-accent-soft: rgba(253, 142, 161, 0.14);
+      --cp-accent-fg: #1a1a1a;
+      --cp-success: #4ade80;
+      --cp-danger: #f87171;
+      --cp-warning: #fbbf24;
+      --cp-link: #4da6ff;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+      --cp-overlay: rgba(41, 41, 41, 0.88);
+      --cp-panel: rgba(41, 41, 41, 0.72);
+      --cp-panel-strong: rgba(41, 41, 41, 0.96);
+      --cp-sheen: rgba(255, 255, 255, 0.04);
+      --cp-highlight: rgba(253, 142, 161, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cp-bg);
+      color: var(--cp-text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .background {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 12% 15%, var(--cp-accent-soft), transparent 38%),
+        radial-gradient(circle at 85% 10%, var(--cp-highlight), transparent 34%),
+        radial-gradient(circle at 70% 80%, var(--cp-accent-soft), transparent 30%),
+        linear-gradient(180deg, var(--cp-bg-elevated), var(--cp-bg));
+      z-index: -2;
+    }
+
+    .orb {
+      position: fixed;
+      width: 20rem;
+      height: 20rem;
+      border-radius: 50%;
+      filter: blur(1.5rem);
+      background: var(--cp-highlight);
+      opacity: 0.85;
+      z-index: -1;
+      animation: float 15s ease-in-out infinite;
+    }
+    .orb.one { top: -6rem; left: -4rem; }
+    .orb.two { right: -5rem; top: 20%; animation-delay: -4s; }
+    .orb.three { bottom: -7rem; left: 38%; animation-delay: -8s; }
+
+    .shell {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    .hero {
+      position: relative;
+      border: 1px solid var(--cp-border);
+      border-radius: 1rem;
+      padding: 2rem;
+      background: var(--cp-panel-strong);
+      box-shadow: var(--cp-shadow);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--cp-sheen), transparent 55%);
+      pointer-events: none;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--cp-text-muted);
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--cp-border);
+      border-radius: 999px;
+      background: var(--cp-surface-soft);
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    h1 {
+      margin: 1rem 0 0.75rem;
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .lead {
+      margin: 0;
+      font-size: 1.05rem;
+      color: var(--cp-text-muted);
+      max-width: 56ch;
+      line-height: 1.55;
+    }
+
+    .actions {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      appearance: none;
+      border: 1px solid var(--cp-border);
+      border-radius: 0.625rem;
+      padding: 0.65rem 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+    .btn.primary {
+      background: var(--cp-accent);
+      color: var(--cp-accent-fg);
+      border-color: var(--cp-accent);
+    }
+    .btn.secondary {
+      background: var(--cp-surface);
+      color: var(--cp-text);
+    }
+    .btn:hover {
+      transform: translateY(-0.1rem);
+      border-color: var(--cp-border-strong);
+    }
+    .btn.primary:hover {
+      background: var(--cp-accent-hover);
+      border-color: var(--cp-accent-hover);
+    }
+
+    .grid {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      border: 1px solid var(--cp-border);
+      border-radius: 1rem;
+      background: var(--cp-surface);
+      padding: 1rem;
+      box-shadow: 0 0 2px var(--cp-border), 0 1px 2px var(--cp-border-strong);
+      transform: translateY(1rem);
+      opacity: 0;
+      animation: rise 700ms cubic-bezier(.2,.9,.2,1) forwards;
+    }
+    .card:nth-child(2) { animation-delay: 120ms; }
+    .card:nth-child(3) { animation-delay: 240ms; }
+    .card:nth-child(4) { animation-delay: 360ms; }
+
+    .card h2 {
+      margin: 0 0 0.45rem;
+      font-size: 1rem;
+    }
+    .card p {
+      margin: 0;
+      color: var(--cp-text-muted);
+      line-height: 1.45;
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      margin-top: 1.5rem;
+      color: var(--cp-text-soft);
+      font-size: 0.88rem;
+    }
+    .footer a { color: var(--cp-link); }
+
+    @keyframes float {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(0, -1.2rem, 0) scale(1.05); }
+    }
+    @keyframes rise {
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes pulse {
+      0%, 100% { background: var(--cp-surface-soft); }
+      50% { background: var(--cp-accent-soft); }
+    }
+
+    @media (max-width: 48rem) {
+      .hero { padding: 1.35rem; }
+      .shell { padding-top: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+  <div class="orb three"></div>
+
+  <main class="shell">
+    <section class="hero">
+      <span class="chip">Microsoft Learn inspired • HTML5 animated</span>
+      <h1>Scout Skill Packages</h1>
+      <p class="lead">
+        Build, index, and assemble high-fidelity PowerPoint course modules for rapid customer curation.
+        This site hosts the reusable skill bundles for the Scout workflow.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="./pptx-module-library.zip">Download /pptx-module-library</a>
+        <a class="btn secondary" href="./mixed-module-deck-assembler.zip">Download /mixed-module-deck-assembler</a>
+        <a class="btn secondary" href="https://github.com/AndrewConniff/scout-skill-packages">View source repository</a>
+        <a class="btn secondary" href="./README.md">Read quick-start guide</a>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="Feature highlights">
+      <article class="card">
+        <h2>Index courseware at scale</h2>
+        <p>Turn full course decks into modular, searchable assets while preserving source design fidelity.</p>
+      </article>
+      <article class="card">
+        <h2>Assemble mixed-module decks</h2>
+        <p>Compose customer-ready decks from indexed modules with title styling and slide-count boundaries.</p>
+      </article>
+      <article class="card">
+        <h2>Keep delivery repeatable</h2>
+        <p>Reuse manifests, runtime scripts, and deterministic outputs to accelerate future engagements.</p>
+      </article>
+      <article class="card">
+        <h2>Ship from GitHub Pages</h2>
+        <p>Lightweight HTML5 landing page with no build step, ready for instant publishing from main.</p>
+      </article>
+    </section>
+
+    <p class="footer">
+      Maintained by Andrew Conniff • Hosted on GitHub Pages
+    </p>
+  </main>
+</body>
+</html>
