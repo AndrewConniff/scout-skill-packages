@@ -89,3 +89,4 @@ Downloads:
 
 - [Example run bundle (zip)](./example-run/introduction-to-agents-example-run.zip)
 - [Unzipped example-run artifacts folder](./example-run/introduction-to-agents-2026-10-23/)
+- [WebPage](https://andrewconniff.github.io/scout-skill-packages/)
